@@ -10,6 +10,7 @@
 - D06: encerramento pelo técnico e reabertura pelo colaborador.
 - D07: publicação de conhecimento pelos técnicos, sem aprovação.
 - D08: Linux/Docker disponíveis e homologação separada.
+- D09: por delegação do usuário, seleção técnica de C#/ASP.NET Core 10 + EF Core 10, React/TypeScript e SQL Server como referência. Dashboards nativos e camada analítica com consultas e agregações autorizadas; Power BI e Python analítico não são dependências do MVP.
 
 ## Proposta de banco
 
@@ -22,7 +23,7 @@ A escolha é tecnicamente adequada ao escopo funcional planejado; capacidade dis
 | ID | Decisão necessária |
 | --- | --- |
 | P01 | Parcialmente resolvida: SQL Server 2022 Standard identificado. Pendentes CPU/RAM, armazenamento, carga compartilhada, capacidade disponível e backup/restauração. |
-| P02 | Proposta registrada em arquitetura.md: ASP.NET Core 10, EF Core 10, React/TypeScript e SQL Server. Pendentes versões exatas, prova de integração e revisão da proposta. |
+| P02 | Stack selecionada (D09). Pendentes versões exatas, prova de integração e dimensionamento; justificativa e estratégia de BI em arquitetura.md. |
 | P03 | Um gestor pode responder por várias áreas? |
 | P04 | Abertura pelo gestor é limitada à sua área? |
 | P05 | Acesso histórico após transferência de colaborador/gestor entre áreas. |
