@@ -1,6 +1,6 @@
 # Backlog inicial
 
-Status inicial de todos os itens: **A detalhar**. Ordem proposta; sem estimativas ou datas comprometidas.
+Status: especificações iniciais elaboradas; implementação ainda não iniciada. Itens permanecem **A detalhar** até resolver as dependências relevantes. Ordem proposta; sem estimativas ou datas comprometidas.
 
 | Item | Entrega | Critério de aceite inicial | Dependências |
 | --- | --- | --- | --- |
@@ -25,3 +25,18 @@ Status inicial de todos os itens: **A detalhar**. Ordem proposta; sem estimativa
 - Migrações em banco descartável e recuperação antes de produção.
 
 Testes serão escolhidos conforme a implementação; esta lista não indica que já foram executados.
+
+## Artefatos de planejamento disponíveis
+
+- [Modelo lógico](modelo-dados.md): entidades, relações e invariantes propostas.
+- [Eventos](eventos-atendimento.md): transições, atomicidade e cenários de aceite.
+- [Indicadores](indicadores.md): fórmulas, coortes e reconciliação.
+
+## Próxima entrega de planejamento
+
+Mapa de telas e navegação por perfil, associado a permissões e casos de uso. Depois detalhar B02–B06 em tarefas implementáveis. Decisões pendentes P03–P10, P16 e P19 devem ser resolvidas antes de ativar os comportamentos correspondentes.
+
+## Critérios adicionais
+
+B07: verificar limites de expediente, pausa atravessando domingo e encerramento com pausa aberta.
+B10: conferir exemplo manual do catálogo; reaberturas não aumentam criados; métricas sem denominador mostram sem dados; escopo de gestor se mantém em cache/exportação. Dependência adicional P18.
