@@ -2,7 +2,7 @@
 
 ## Direção
 
-Aplicação em Linux/Docker, com SQL Server existente como candidato inicial. Proposta de monólito modular: identidade/organização, atendimento, SLA, notificações, conhecimento e indicadores. CMDB e reservas não serão implementados agora.
+Aplicação em Linux/Docker, com recomendação de reutilizar o SQL Server 2022 Standard existente. Proposta de monólito modular: identidade/organização, atendimento, SLA, notificações, conhecimento e indicadores. CMDB e reservas não serão implementados agora.
 
 Linguagem, frameworks, bibliotecas, versões e dimensionamento ainda não foram escolhidos.
 
@@ -35,3 +35,13 @@ Branch não equivale a ambiente. Não é necessário criar uma branch permanente
 ## Robustez a especificar
 
 Persistência confiável, tratamento de concorrência, repetição controlada de notificações, logs e métricas, verificação de saúde, backup e restauração. Metas de disponibilidade e recuperação permanecem pendentes; Docker sozinho não representa alta disponibilidade.
+ 
+## Banco identificado
+
+SQL Server 2022 Standard Edition (64-bit), conforme resultado de consulta fornecido pelo responsável pelo produto. Nenhuma conexão ao servidor foi realizada por este projeto.
+
+A edição não impõe uma limitação funcional identificada para o MVP descrito. Desempenho depende de modelagem, consultas, índices, simultaneidade, armazenamento e recursos livres na instância. Não pressupor capacidade a partir do total de colaboradores.
+
+Referência: https://learn.microsoft.com/en-us/sql/sql-server/editions-and-components-of-sql-server-2022
+
+Próxima verificação operacional: CPU, RAM, armazenamento, outras cargas e recuperação. O planejamento da aplicação pode avançar enquanto esses dados são levantados.
