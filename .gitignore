@@ -1,0 +1,29 @@
+# Segredos e configurações locais
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+# Dados e backups
+*.bak
+*.dump
+*.mdf
+*.ldf
+*.sqlite
+*.sqlite3
+backups/
+uploads/
+# Saídas locais
+*.log
+.DS_Store
+.idea/
+.vscode/
+node_modules/
+dist/
+coverage/
+__pycache__/
+.venv/
+bin/
+obj/
