@@ -1,15 +1,40 @@
-# Registro de decisões
+# Decisões e pendências
 
-Nenhuma decisão interna detalhada está publicada neste documento.
+## Decisões confirmadas
 
-## Modelo de registro
+- D01: entregar ITSM antes de CMDB, inventário e agendamentos.
+- D02: abertura exclusiva no portal; avisos no portal e e-mail.
+- D03: categorias encaminham aos grupos; técnicos assumem chamados.
+- D04: cadastro organizacional local; autenticação Microsoft 365.
+- D05: SLA configurável; pausa por espera do solicitante.
+- D06: encerramento pelo técnico e reabertura pelo colaborador.
+- D07: publicação de conhecimento pelos técnicos, sem aprovação.
+- D08: Linux/Docker disponíveis e homologação separada.
 
-- Identificador e título
-- Estado: proposta, aprovada ou substituída
-- Contexto
-- Alternativas consideradas
-- Decisão e justificativa
-- Consequências
-- Validação e dependências
+## Proposta de banco
 
-Publicar somente informações autorizadas para divulgação.
+Reutilizar SQL Server existente, condicionado à versão, edição, compatibilidade, capacidade e condições operacionais. Não é decisão final nem garantia de desempenho.
+
+## Pendências que influenciam implementação
+
+| ID | Decisão necessária |
+| --- | --- |
+| P01 | Versão/edição do SQL Server, capacidade disponível, carga atual e condições de backup/restauração. |
+| P02 | Linguagem, frameworks, versões suportadas e estratégia de persistência. |
+| P03 | Um gestor pode responder por várias áreas? |
+| P04 | Abertura pelo gestor é limitada à sua área? |
+| P05 | Acesso histórico após transferência de colaborador/gestor entre áreas. |
+| P06 | Matriz impacto/severidade, permissões de ajuste e tratamento de impacto entre unidades. |
+| P07 | SLA após reabertura, retomada após resposta e efeito das alterações de política nos chamados existentes. |
+| P08 | Eventual limite temporal de reabertura; nenhum limite foi aprovado. |
+| P09 | Cadastro/provisionamento no primeiro login e bloqueio de usuários sem vínculo organizacional. |
+| P10 | Categoria indefinida, transferências e técnico indisponível na reabertura. |
+| P11 | SLA excepcional, feriados por unidade, fuso horário e calendários. |
+| P12 | Serviço de envio de e-mail, identidade remetente e credenciais por ambiente. |
+| P13 | Limites, retenção, armazenamento e proteção dos anexos. |
+| P14 | Metas de disponibilidade, perda máxima de dados e tempo de recuperação. |
+| P15 | Infraestrutura dos ambientes, executor de implantação e estratégia de acesso. |
+| P16 | Visibilidade de notas internas e permissões de edição/interação dos gestores. |
+| P17 | Dados atuais de chamados a migrar ou manter para consulta. |
+
+Cada decisão futura deve registrar contexto, escolha, motivo, consequências e validação. Não considerar sugestões anteriores como aprovação tácita.
