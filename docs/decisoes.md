@@ -39,5 +39,11 @@ A escolha é tecnicamente adequada ao escopo funcional planejado; capacidade dis
 | P15 | Infraestrutura dos ambientes, executor de implantação e estratégia de acesso. |
 | P16 | Visibilidade de notas internas e permissões de edição/interação dos gestores. |
 | P17 | Dados atuais de chamados a migrar ou manter para consulta. |
+| P18 | Validar catálogo de métricas: janela de reabertura, atualização, retenção e atribuição de resultados após transferências. |
+| P19 | Permissões de cancelamento, comportamento após cancelamento e edição/interação em chamados encerrados. |
 
 Cada decisão futura deve registrar contexto, escolha, motivo, consequências e validação. Não considerar sugestões anteriores como aprovação tácita.
+
+## Modelagem elaborada
+
+Modelo lógico em modelo-dados.md; eventos em eventos-atendimento.md; métricas em indicadores.md. São especificações para revisão, sem migrações executadas. Ciclo de atendimento não decide automaticamente a política de SLA após reabertura. A preservação do contexto histórico não resolve por si só o acesso de gestores após transferências.
