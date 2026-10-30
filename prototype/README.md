@@ -43,3 +43,11 @@ Matriz impacto/severidade, retomada após resposta, motivo de reabertura, escopo
 Execute node check.cjs. Testes sem dependências verificam renderização lógica, filtros por perfil, assunção repetida, visibilidade simulada de nota interna, espera/retomada, encerramento/reabertura, criação, escape HTML e reconciliação do backlog.
 
 Os testes passaram no ambiente de elaboração. Não são testes de DOM real, concorrência de banco ou autorização do backend. QA visual e interação em navegador não verificados: o serviço de prévia do ambiente estava indisponível. Responsividade e acessibilidade ainda requerem revisão no navegador.
+
+## Identidade visual Arbos
+
+Revisão solicitada pelo usuário com base no logotipo anexado. Logo original incorporado ao HTML, sem dependência externa ou redesenho. Cores amostradas: verde escuro #00563A e verde vivo #00A245, com branco e neutros. Isso é uma direção derivada do logotipo, não substitui um manual oficial de marca.
+
+Navegação branca com indicação verde, cabeçalho institucional e atalhos por categoria na página inicial. Formulários, tabelas, conversa e dashboards seguem o mesmo conjunto de cores e espaçamentos. Os atalhos abrem o formulário com a categoria correspondente selecionada.
+
+Testes de comportamento passaram novamente após a revisão. QA visual no navegador continua pendente pela indisponibilidade da infraestrutura de prévia.
