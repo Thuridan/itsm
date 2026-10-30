@@ -11,6 +11,7 @@ Plataforma interna de gerenciamento de serviços. **Fase atual: planejamento e e
 - [Modelo de dados](docs/modelo-dados.md)
 - [Eventos e transições](docs/eventos-atendimento.md)
 - [Catálogo de indicadores](docs/indicadores.md)
+- [Telas e navegação por perfil](docs/telas-navegacao.md)
 - [Fluxo de desenvolvimento](CONTRIBUTING.md)
 
 ## Etapas
