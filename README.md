@@ -8,6 +8,9 @@ Plataforma interna de gerenciamento de serviços. **Fase atual: planejamento e e
 - [Decisões e pendências](docs/decisoes.md)
 - [Backlog inicial](docs/backlog.md)
 - [Arquitetura e ambientes](docs/arquitetura.md)
+- [Modelo de dados](docs/modelo-dados.md)
+- [Eventos e transições](docs/eventos-atendimento.md)
+- [Catálogo de indicadores](docs/indicadores.md)
 - [Fluxo de desenvolvimento](CONTRIBUTING.md)
 
 ## Etapas
@@ -16,7 +19,7 @@ Plataforma interna de gerenciamento de serviços. **Fase atual: planejamento e e
 2. CMDB e inventário, integrados ao ITSM.
 3. Reservas, empréstimos e agendamentos.
 
-Requisitos confirmados e propostas estão separados na documentação. Stack, estimativas e regras ainda pendentes não devem ser tratados como aprovados.
+Requisitos confirmados e propostas estão separados na documentação. A stack foi selecionada por delegação técnica; estimativas e regras de negócio pendentes não devem ser tratadas como aprovadas.
 
 ## Estado do repositório
 
