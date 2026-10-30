@@ -34,9 +34,25 @@ Testes serão escolhidos conforme a implementação; esta lista não indica que 
 
 ## Próxima entrega de planejamento
 
-Mapa de telas e navegação por perfil, associado a permissões e casos de uso. Depois detalhar B02–B06 em tarefas implementáveis. Decisões pendentes P03–P10, P16 e P19 devem ser resolvidas antes de ativar os comportamentos correspondentes.
+Mapa de telas e navegação elaborado em [telas-navegacao.md](telas-navegacao.md), com 23 telas e 8 jornadas. Próxima etapa: protótipo das telas centrais e detalhamento de B02–B06 em tarefas implementáveis. Decisões pendentes P03–P10, P16, P19 e P20 devem ser resolvidas antes de ativar os comportamentos correspondentes.
 
 ## Critérios adicionais
 
 B07: verificar limites de expediente, pausa atravessando domingo e encerramento com pausa aberta.
 B10: conferir exemplo manual do catálogo; reaberturas não aumentam criados; métricas sem denominador mostram sem dados; escopo de gestor se mantém em cache/exportação. Dependência adicional P18.
+
+## Rastreabilidade de experiência
+
+| Item | Telas / jornadas de referência |
+| --- | --- |
+| B02 | T01/T02/T17/T18; controle de escopo em J01/J05 |
+| B03 | T19/T20 e encaminhamento de J01 |
+| B04 | T03/T04/T05/T06; J01 |
+| B05 | T10/T11/T12/T06; J02/J03 |
+| B06 | T06; J04 |
+| B07 | T21/T22/T06; J03/J07 |
+| B08 | T07/T06; J03 |
+| B09 | T08/T09/T13/T14; J06 |
+| B10 | T15/T16; J05/J08 |
+
+Critérios transversais: estados de erro/vazio/carregamento, teclado, tratamento de concorrência e expiração de sessão. Planejamento documentado não equivale a teste executado.
