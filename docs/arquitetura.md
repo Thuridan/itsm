@@ -1,10 +1,10 @@
-# Arquitetura e ambientes — proposta
+# Arquitetura e ambientes
 
 ## Direção
 
 Aplicação em Linux/Docker, com recomendação de reutilizar o SQL Server 2022 Standard existente. Proposta de monólito modular: identidade/organização, atendimento, SLA, notificações, conhecimento e indicadores. CMDB e reservas não serão implementados agora.
 
-A stack de referência proposta está detalhada abaixo. Versões exatas de dependências e dimensionamento serão definidos na implementação.
+A stack selecionada está detalhada abaixo. Versões exatas de dependências e dimensionamento serão definidos na implementação.
 
 ## Ambientes
 
@@ -46,9 +46,9 @@ Referência: https://learn.microsoft.com/en-us/sql/sql-server/editions-and-compo
 
 Próxima verificação operacional: CPU, RAM, armazenamento, outras cargas e recuperação. O planejamento da aplicação pode avançar enquanto esses dados são levantados.
 
-## Stack de referência proposta
+## Stack de referência
 
-Proposta técnica para implementação, sem atribuir aprovação explícita do produto a escolhas ainda não revisadas.
+Stack selecionada após delegação da avaliação técnica pelo usuário. Detalhes operacionais e regras de produto ainda pendentes continuam identificados como propostas.
 
 | Camada | Escolha proposta | Motivo |
 | --- | --- | --- |
@@ -117,3 +117,47 @@ Esses diretórios ainda não foram criados: esta etapa especifica a arquitetura.
 - https://learn.microsoft.com/en-us/aspnet/core/security/authentication/configure-oidc-web-authentication
 - https://react.dev/learn/typescript
 - https://vite.dev/guide/build
+
+## Decisão técnica: stack e camada analítica
+
+Status: selecionada pelo responsável técnico após delegação explícita do usuário para avaliar a linguagem considerando o sistema completo, dashboards e integrações.
+
+Escolha: C# / ASP.NET Core 10 + EF Core 10 no backend, React/TypeScript na interface e SQL Server 2022 Standard como banco de referência. Capacidade do servidor e versões exatas ainda serão validadas antes de implantação.
+
+### Fundamentação e alternativas
+
+Django/Python e Rails/Ruby são alternativas viáveis. A escolha de C# considera em conjunto persistência SQL Server, identidade corporativa, transações, autorização, contratos de integração, execução em segundo plano e ciclo LTS. Não pressupõe que Python/Ruby sejam incapazes ou que Microsoft 365 exija C#. Microsoft Graph disponibiliza SDKs para C# e Python, entre outras linguagens.
+
+Dashboards não exigem que o backend utilize Python: visualização, consultas analíticas e processamento estatístico são responsabilidades distintas. Python permanece opção futura para uma necessidade concreta de estatística/ML; não será adicionado ao MVP sem essa necessidade.
+
+### Dashboards nativos e evolução analítica
+
+- Primeira fase: dashboards nativos React, consumindo endpoints analíticos autorizados em ASP.NET Core.
+- Catálogo de métricas: fórmula, população, denominador, granularidade, calendário, fuso, filtros, atualização e tratamento de reaberturas/pausas.
+- Relatórios operacionais consultam dados atuais com consultas indexadas e limites; análises históricas pesadas podem usar agregados atualizados em segundo plano.
+- Separar logicamente modelos de escrita e leitura; não exige microserviços ou outro banco inicial.
+- Registrar eventos de status, atribuição, SLA e contexto organizacional suficientes para reconstruir métricas históricas; regras de transferência organizacional ainda dependem de decisão do produto.
+- Exibir última atualização para métricas pré-calculadas. Cadência de atualização será definida por indicador.
+- Cache de informações gerenciais deve incluir escopo autorizado e filtros; mudanças de permissões exigem invalidação/revalidação. Nunca compartilhar resultados entre áreas sem autorização.
+- Se medições mostrarem competição com atendimento, avaliar armazenamento analítico separado. Não assumir réplica de leitura disponível na edição/infraestrutura existente.
+- Exportações grandes executadas em segundo plano e entregues por download autorizado.
+- Dashboards do tipo BI não significam requisito de Power BI nem editor livre de relatórios. Incorporação de ferramenta externa, licenciamento, acesso à nuvem e governança exigem avaliação específica futura.
+
+### Integrações
+
+- Adaptador por sistema externo e contratos versionados, mantendo regras do ITSM independentes do fornecedor.
+- REST/OpenAPI como contrato inicial; autenticação e autorização próprias para integrações, conforme caso de uso.
+- Persistência de trabalhos, timeouts, retentativas limitadas, controle de taxa, idempotência e tratamento de falhas permanentes.
+- Webhooks apenas quando necessários, com autenticação/verificação de origem, proteção contra repetição e deduplicação.
+- Correlation IDs, métricas de falha, histórico de sincronizações e reprocessamento controlado, sem registrar segredos.
+- Dependências externas indisponíveis não devem impedir o registro de chamados quando a operação puder ser persistida e processada depois.
+- Integrações futuras de CMDB e reservas permanecem fora da implementação inicial.
+
+### Validação antes do piloto
+
+Medir carga representativa de atendimento e dashboards simultâneos, latência das consultas, impacto dos jobs e comportamento com integração indisponível. Verificar isolamento por área em listagens, métricas, cache e exportações. Definir metas mensuráveis antes de considerar desempenho aprovado.
+
+Fontes:
+- https://learn.microsoft.com/en-us/graph/sdks/sdks-overview
+- https://learn.microsoft.com/en-us/javascript/api/overview/powerbi/embedded-analytics-client-api
+- https://learn.microsoft.com/aspnet/core/performance/performance-best-practices
