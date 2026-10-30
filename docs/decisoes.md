@@ -22,7 +22,7 @@ A escolha é tecnicamente adequada ao escopo funcional planejado; capacidade dis
 | ID | Decisão necessária |
 | --- | --- |
 | P01 | Parcialmente resolvida: SQL Server 2022 Standard identificado. Pendentes CPU/RAM, armazenamento, carga compartilhada, capacidade disponível e backup/restauração. |
-| P02 | Linguagem, frameworks, versões suportadas e estratégia de persistência. |
+| P02 | Proposta registrada em arquitetura.md: ASP.NET Core 10, EF Core 10, React/TypeScript e SQL Server. Pendentes versões exatas, prova de integração e revisão da proposta. |
 | P03 | Um gestor pode responder por várias áreas? |
 | P04 | Abertura pelo gestor é limitada à sua área? |
 | P05 | Acesso histórico após transferência de colaborador/gestor entre áreas. |
