@@ -13,13 +13,15 @@
 
 ## Proposta de banco
 
-Reutilizar SQL Server existente, condicionado à versão, edição, compatibilidade, capacidade e condições operacionais. Não é decisão final nem garantia de desempenho.
+Recomendação: reutilizar SQL Server 2022 Standard Edition (64-bit). Edição e versão foram informadas pelo responsável pelo produto a partir da consulta da instância: ProductVersion 16.0.4305.5, ProductLevel RTM, ProductUpdateLevel CU27, referência KB5126934. Esses valores são evidência fornecida pelo usuário, não auditoria independente do servidor ou confirmação de patch mais recente.
+
+A escolha é tecnicamente adequada ao escopo funcional planejado; capacidade disponível, carga, conectividade, backup e recuperação ainda precisam de validação antes da implantação.
 
 ## Pendências que influenciam implementação
 
 | ID | Decisão necessária |
 | --- | --- |
-| P01 | Versão/edição do SQL Server, capacidade disponível, carga atual e condições de backup/restauração. |
+| P01 | Parcialmente resolvida: SQL Server 2022 Standard identificado. Pendentes CPU/RAM, armazenamento, carga compartilhada, capacidade disponível e backup/restauração. |
 | P02 | Linguagem, frameworks, versões suportadas e estratégia de persistência. |
 | P03 | Um gestor pode responder por várias áreas? |
 | P04 | Abertura pelo gestor é limitada à sua área? |
