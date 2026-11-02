@@ -31,3 +31,7 @@ obj/
 # Artefatos da aplicação
 artifacts/
 src/Itsm.Web/wwwroot/
+
+# Configuração de identidade e chaves locais
+deploy/.identity.env
+**/identity-keys/

@@ -56,3 +56,7 @@ B10: conferir exemplo manual do catálogo; reaberturas não aumentam criados; m�
 | B10 | T15/T16; J05/J08 |
 
 Critérios transversais: estados de erro/vazio/carregamento, teclado, tratamento de concorrência e expiração de sessão. Planejamento documentado não equivale a teste executado.
+
+## Entrega de identidade
+
+B02 em implementação: login single-tenant, persistência de cadastro pendente, ativação de colaborador pelo administrador e reavaliação de vínculo/permissão no servidor. T01/T02 e tela inicial de provisionamento implementadas. Vinculação de gestores, grupos e histórico organizacional completo ainda pendentes. Ver identidade.md para baseline e teste em homologação.

@@ -60,3 +60,9 @@ O usuário validou o protótipo Arbos: logotipo original, verdes #00563A e #00A2
 ## Fundação em implementação
 
 A primeira entrega técnica está em docs/fundacao.md. Implementa shell React e endpoints de estado/saúde. SSO, autorização de negócio, persistência, migrações e atendimento real permanecem pendentes. A infraestrutura interna não foi acessada ou alterada.
+
+## Implementação de identidade em homologação
+
+Login OIDC no tenant único, cadastro pendente no primeiro acesso, ativação de colaborador com área/unidade por administrador local e bootstrap explícito do primeiro administrador. Usa handler OIDC oficial diretamente, sem Microsoft.Identity.Web/Graph nesta entrega. Configuração e limites em identidade.md.
+
+P09 tem implementação proposta para revisão; não considera aprovada a ativação em produção. P03/P05/P16 e administração completa da organização permanecem abertas. A duração de oito horas da sessão local é configuração técnica inicial a validar. Nenhum segredo real foi registrado.

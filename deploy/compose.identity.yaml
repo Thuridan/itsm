@@ -1,0 +1,9 @@
+# Optional override, applied after TLS/network/storage preparation.
+services:
+  web:
+    env_file:
+      - .identity.env
+    volumes:
+      - identity-keys:/var/lib/itsm/keys
+volumes:
+  identity-keys:

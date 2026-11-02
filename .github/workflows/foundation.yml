@@ -8,6 +8,14 @@ permissions:
 jobs:
   build-test:
     runs-on: ubuntu-latest
+    services:
+      sqlserver:
+        image: mcr.microsoft.com/mssql/server:2022-latest
+        env:
+          ACCEPT_EULA: Y
+          MSSQL_SA_PASSWORD: Ci-only-${{ github.run_id }}-Sql!
+        ports:
+          - 1433:1433
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -22,5 +30,8 @@ jobs:
         working-directory: src/itsm-ui
       - run: mkdir -p src/Itsm.Web/wwwroot && cp -R src/itsm-ui/dist/. src/Itsm.Web/wwwroot/
       - run: dotnet publish src/Itsm.Web/Itsm.Web.csproj -c Release -o artifacts/web
+      - run: dotnet run --project tests/Itsm.IdentityChecks -c Release
+        env:
+          TEST_SQL: Server=127.0.0.1,1433;User ID=sa;Password=Ci-only-${{ github.run_id }}-Sql!;Encrypt=true;TrustServerCertificate=true
       - run: python3 tests/smoke_backend.py
       - run: docker build -t itsm-foundation:ci .
