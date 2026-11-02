@@ -1,0 +1,17 @@
+services:
+  web:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    ports:
+      - "127.0.0.1:${ITSM_HTTP_PORT:-8080}:8080"
+    environment:
+      ASPNETCORE_ENVIRONMENT: ${ITSM_ENVIRONMENT:-Staging}
+    read_only: true
+    tmpfs:
+      - /tmp
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    restart: unless-stopped
