@@ -1,6 +1,6 @@
 # Backlog inicial
 
-Status: especificações iniciais elaboradas; implementação ainda não iniciada. Itens permanecem **A detalhar** até resolver as dependências relevantes. Ordem proposta; sem estimativas ou datas comprometidas.
+Status: especificações iniciais elaboradas; fundação técnica iniciada em branch de desenvolvimento. Itens permanecem **A detalhar** até resolver as dependências relevantes. Ordem proposta; sem estimativas ou datas comprometidas.
 
 | Item | Entrega | Critério de aceite inicial | Dependências |
 | --- | --- | --- | --- |
@@ -34,7 +34,7 @@ Testes serão escolhidos conforme a implementação; esta lista não indica que 
 
 ## Próxima entrega de planejamento
 
-Mapa de telas e navegação elaborado em [telas-navegacao.md](telas-navegacao.md), com 23 telas e 8 jornadas. Próxima etapa: protótipo das telas centrais e detalhamento de B02–B06 em tarefas implementáveis. Decisões pendentes P03–P10, P16, P19 e P20 devem ser resolvidas antes de ativar os comportamentos correspondentes.
+Mapa de telas e navegação elaborado em [telas-navegacao.md](telas-navegacao.md), com 23 telas e 8 jornadas. Protótipo visual Arbos validado. Fundação ASP.NET Core/React em desenvolvimento; detalhes em [fundacao.md](fundacao.md). Próxima etapa: identidade e provisionamento antes de habilitar o atendimento real. Decisões pendentes P03–P10, P16, P19 e P20 devem ser resolvidas antes de ativar os comportamentos correspondentes.
 
 ## Critérios adicionais
 

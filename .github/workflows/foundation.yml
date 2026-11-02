@@ -1,0 +1,26 @@
+name: Foundation CI
+on:
+  pull_request:
+  push:
+    branches: [main, "feat/**"]
+permissions:
+  contents: read
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: src/itsm-ui/package-lock.json
+      - uses: actions/setup-dotnet@v4
+        with:
+          global-json-file: global.json
+      - run: npm ci && npm test && npm run build
+        working-directory: src/itsm-ui
+      - run: mkdir -p src/Itsm.Web/wwwroot && cp -R src/itsm-ui/dist/. src/Itsm.Web/wwwroot/
+      - run: dotnet publish src/Itsm.Web/Itsm.Web.csproj -c Release -o artifacts/web
+      - run: python3 tests/smoke_backend.py
+      - run: docker build -t itsm-foundation:ci .

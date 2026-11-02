@@ -1,10 +1,14 @@
 # ITSM
 
-Plataforma interna de gerenciamento de serviços. **Fase atual: planejamento e prototipação.** Existe uma demonstração estática; a aplicação de produção e os ambientes ainda não foram implantados.
+Plataforma interna de gerenciamento de serviços. **Fase atual: fundação da aplicação em desenvolvimento.** Frontend React e host ASP.NET Core iniciais; SSO, banco e atendimento real ainda não habilitados. Protótipo preservado como referência visual.
 
 ## Protótipo
 
 Veja [instruções e limites do protótipo navegável](prototype/README.md). Baixe prototype/index.html e abra no navegador. Dados fictícios em memória, sem SSO, banco ou e-mail real.
+
+## Aplicação em desenvolvimento
+
+[Como executar, testar e conhecer os limites da fundação](docs/fundacao.md).
 
 ## Documentação
 

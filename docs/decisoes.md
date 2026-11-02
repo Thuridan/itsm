@@ -52,3 +52,11 @@ Modelo lógico em modelo-dados.md; eventos em eventos-atendimento.md; métricas 
 ## Experiência especificada
 
 Mapa de telas, rotas propostas, ações por papel/estado e jornadas em telas-navegacao.md. Não é interface implementada. Navegação não amplia autorização. Detalhamento de métricas deve manter população, granularidade, corte e escopo do indicador.
+
+## Identidade visual validada
+
+O usuário validou o protótipo Arbos: logotipo original, verdes #00563A e #00A245, superfícies brancas e navegação institucional. Esta validação é visual; não aprova implicitamente políticas de negócio pendentes.
+
+## Fundação em implementação
+
+A primeira entrega técnica está em docs/fundacao.md. Implementa shell React e endpoints de estado/saúde. SSO, autorização de negócio, persistência, migrações e atendimento real permanecem pendentes. A infraestrutura interna não foi acessada ou alterada.

@@ -27,3 +27,7 @@ __pycache__/
 .venv/
 bin/
 obj/
+
+# Artefatos da aplicação
+artifacts/
+src/Itsm.Web/wwwroot/
