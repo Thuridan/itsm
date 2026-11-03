@@ -1,6 +1,6 @@
 # ITSM
 
-Plataforma interna de gerenciamento de serviços. **Fase atual: fundação da aplicação em desenvolvimento.** Frontend React e host ASP.NET Core iniciais; SSO, banco e atendimento real ainda não habilitados. Protótipo preservado como referência visual.
+Plataforma interna de gerenciamento de serviços. **Fase atual: fundação da aplicação em desenvolvimento.** Frontend React e host ASP.NET Core iniciais; Login Entra e provisionamento SQL preparados para homologação; integração com o ambiente do colégio e atendimento real ainda não habilitados. Protótipo preservado como referência visual.
 
 ## Protótipo
 
@@ -9,6 +9,8 @@ Veja [instruções e limites do protótipo navegável](prototype/README.md). Bai
 ## Aplicação em desenvolvimento
 
 [Como executar, testar e conhecer os limites da fundação](docs/fundacao.md).
+
+[Configurar identidade e provisionamento](docs/identidade.md). Nenhum tenant/banco real foi acessado nesta entrega.
 
 ## Documentação
 

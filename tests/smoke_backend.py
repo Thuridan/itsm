@@ -22,8 +22,10 @@ try:
     status, headers, data = request('/api/v1/system')
     assert status == 200 and headers['Cache-Control'] == 'no-store'
     system = json.loads(data)
-    assert system['stage'] == 'foundation'
+    assert system['stage'] == 'identity'
     assert not system['authenticationEnabled'] and not system['persistenceEnabled'] and not system['acceptingTickets']
+    assert json.loads(request('/api/v1/me')[2]) == {'authenticated': False}
+    assert request('/auth/login')[0] == 503
     assert request('/health/ready')[0] == 503
     assert request('/api/v1/nonexistent')[0] == 404
     assert request('/health/nonexistent')[0] == 404
