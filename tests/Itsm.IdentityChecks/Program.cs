@@ -28,7 +28,7 @@ var sql=new SqlConnectionStringBuilder(master.ConnectionString){InitialCatalog=d
 var options=new DbContextOptionsBuilder<IdentityDb>().UseSqlServer(sql.ConnectionString).Options;
 try {
  await using(var setup=new SqlConnection(sql.ConnectionString)){
-  await setup.OpenAsync();await using var cmd=setup.CreateCommand();cmd.CommandText=await File.ReadAllText("deploy/sql/001_identity.sql");await cmd.ExecuteNonQueryAsync();
+  await setup.OpenAsync();await using var cmd=setup.CreateCommand();cmd.CommandText=await File.ReadAllTextAsync("deploy/sql/001_identity.sql");await cmd.ExecuteNonQueryAsync();
  }
  await using(var db=new IdentityDb(options)){
   var service=new IdentityAccess(db,settings);
